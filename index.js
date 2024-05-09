@@ -48,13 +48,13 @@ function writeToFile(name, userInput) {
     svgCode += `<circle cx="150" cy="150" r="75" fill="${userInput.shapeColor}" />`;
   } else if (userInput.shape === "Square") {
     userShape = new Square();
-    svgCode += `<rect x="50" y="50" width="100" height="100" fill="${userInput.shapeColor}" />`;
+    svgCode += `<rect x="75" y="75" width="150" height="150" fill="${userInput.shapeColor}" />`;
   } else {
     userShape = new Triangle();
-    svgCode += `<polygon points="150,20 100,150 100,150" fill="${userInput.shapeColor}" />`;
+    svgCode += `<polygon points="150 50, 250 200, 50 200" fill="${userInput.shapeColor}" />`;
   }
 
-  svgCode += `<text x="150" y="150" dominant-baseline="middle" text-anchor="middle" font-size="50" fill="${userInput.textColor}">${userInput.text}</text>`;
+  svgCode += `<text x="150" y="155" dominant-baseline="middle" text-anchor="middle" font-size="50" fill="${userInput.textColor}">${userInput.text}</text>`;
 
   svgCode += `</svg>`;
 
