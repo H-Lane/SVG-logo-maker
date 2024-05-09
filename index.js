@@ -42,17 +42,14 @@ function writeToFile(name, userInput) {
   let svgCode = `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
     viewBox="0 0 400 400" style="enable-background:new 0 0 400 400;" xml:space="preserve">`;
 
-//   let userShape;
+
   if (userInput.shape === "Circle") {
-    // userShape = new Circle();
     svgCode += `<circle cx="150" cy="150" r="75" fill="${userInput.shapeColor}" />`;
   } else if (userInput.shape === "Square") {
-    // userShape = new Square();
     svgCode += `<rect x="75" y="75" width="150" height="150" fill="${userInput.shapeColor}" />`;
   } else {
-    // userShape = new Triangle();
     svgCode += `<polygon points="150 50, 250 200, 50 200" fill="${userInput.shapeColor}" />`;
-  }
+  };
 
   svgCode += `<text x="150" y="155" dominant-baseline="middle" text-anchor="middle" font-size="50" fill="${userInput.textColor}">${userInput.text}</text>`;
 
