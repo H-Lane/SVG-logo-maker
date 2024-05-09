@@ -54,7 +54,7 @@ function writeToFile(name, userInput) {
     svgCode += `<polygon points="150,20 100,150 100,150" fill="${userInput.shapeColor}" />`;
   }
 
-  svgCode += `<text x="150" y="150" dominant-baseline="middle" text-anchor="middle" fill="${userInput.textColor}">${userInput.text}</text>`;
+  svgCode += `<text x="150" y="150" dominant-baseline="middle" text-anchor="middle" font-size="50" fill="${userInput.textColor}">${userInput.text}</text>`;
 
   svgCode += `</svg>`;
 
