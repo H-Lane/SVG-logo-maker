@@ -37,18 +37,19 @@ function init() {
       } else writeToFile("logo.svg", response);
     });
 }
-
 function writeToFile(name, userInput) {
   let svgCode = `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
     viewBox="0 0 400 400" style="enable-background:new 0 0 400 400;" xml:space="preserve">`;
 
-
   if (userInput.shape === "Circle") {
-    svgCode += `<circle cx="150" cy="150" r="75" fill="${userInput.shapeColor}" />`;
+    const shape = new Circle(userInput.shapeColor);
+    svgCode += shape.render();
   } else if (userInput.shape === "Square") {
-    svgCode += `<rect x="75" y="75" width="150" height="150" fill="${userInput.shapeColor}" />`;
+    const shape = new Square(userInput.shapeColor);
+    svgCode += shape.render();
   } else {
-    svgCode += `<polygon points="150 50, 250 200, 50 200" fill="${userInput.shapeColor}" />`;
+    const shape = new Triangle(userInput.shapeColor);
+    svgCode += shape.render();
   };
 
   svgCode += `<text x="150" y="155" dominant-baseline="middle" text-anchor="middle" font-size="50" fill="${userInput.textColor}">${userInput.text}</text>`;
